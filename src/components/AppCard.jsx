@@ -62,6 +62,7 @@ const AppCard = ({
               w="32px"
               src={image}
               justifyContent={"flex-start"}
+              alt='app-logo'
             />
             <Spacer p="2" />
             <Heading size='md' w="100%">{name}</Heading>

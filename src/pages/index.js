@@ -19,18 +19,10 @@ import {
 } from '@/state-management/index';
 
 import keyboardShortcuts from '@/utils/keyboardShortcuts';
-import useAuth from '@/hooks/auth';
-import { useRouter } from 'next/router';
 
 export default function Home() {
   const state = useContext(MainStateContext);
   const dispatch = useContext(MainDispatchContext);
-  const { isLoggedIn } = useAuth();
-  const router = useRouter();
-
-  // if (!isLoggedIn) {
-  //   return router.push('/');
-  // }
 
   useEffect(() => {
     keyboardShortcuts(dispatch);
@@ -44,7 +36,7 @@ export default function Home() {
         })
       }, 4000);
     }
-  }, [state.searchingData]);
+  }, [state?.searchingData]);
 
   return (
     <>

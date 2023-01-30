@@ -54,13 +54,14 @@ const Header = ({ session }) => {
                 bg='gray.300'
                 borderLeftRadius='20'
                 cursor="pointer"
-                children={<SearchIcon color='white' />}
                 onClick={() => {
                   dispatch({
                     type: "START_SEARCHING"
                   });
                 }}
-              />
+              >
+                <SearchIcon color='white' />
+              </InputLeftElement>
               <Input
                 ref={searchField}
                 type='search'
@@ -81,9 +82,9 @@ const Header = ({ session }) => {
                   })
                 }}
               />
-              <InputRightElement
-                children={<Kbd>/</Kbd>}
-              />
+              <InputRightElement>
+                {<Kbd>/</Kbd>}
+              </InputRightElement>
             </InputGroup>
           </Box>
           <Spacer p='5' />
